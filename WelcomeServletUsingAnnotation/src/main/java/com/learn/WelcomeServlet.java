@@ -29,6 +29,11 @@ public class WelcomeServlet extends HttpServlet {
 	
 	response.setContentType("text/html");
 	response.getWriter().append("Welcome " + var1 +" "+ var2).close();
+	
+	
+	//Code to enter in URL
+	//http://localhost:8080/WelcomeServletUsingAnnotation/annotation?var1=Sridevi&var2=Inti
+	
 	}
 	@Override
 	public void destroy() {
