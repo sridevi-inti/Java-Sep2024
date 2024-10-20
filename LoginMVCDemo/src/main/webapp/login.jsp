@@ -19,6 +19,7 @@ if(error != null ) {
 %>
 </h2>
 <form method="post" action="LoginServlet">
+
 Username: <input type="text" name="username"> <br>
 Password: <input type="password" name="password"> <br>
 <input type="submit" value="Submit">
