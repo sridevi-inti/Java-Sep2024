@@ -1,9 +1,9 @@
-package com.learn.controller;
+package com.learn.bean;
 
 public class UserBean {
 	private String username;
 	private String password;
-	priavte String firstName;
+	private String firstName;
 	private String lastName;
 	
 	public String getUsername() {
@@ -18,11 +18,11 @@ public class UserBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public priavte getString() {
-		return String;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setString(priavte string) {
-		String = string;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	public String getLastName() {
 		return lastName;
@@ -30,5 +30,9 @@ public class UserBean {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	
+
+	
 
 }

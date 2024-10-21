@@ -15,13 +15,15 @@ if(error != null ) {
 	out.print(error); 
 	session.setAttribute("error", null);
 }
-
 %>
 </h2>
-<form method="post" action="loginServlet">
-Username: <input type="text" name="username"> <br>
-Password: <input type="password" name="password"> <br>
-<input type="submit" value="Submit">
+<form method="post" action="registerServlet">
+
+Firstname: <input type="text" name="firstname"><br>
+Lastname: <input type="text" name="lastname"><br>
+Username: <input type="text" name="username"><br>
+Password: <input type="password" name="password"><br>
+<input type="submit" value="submit">
 </form>
-</body> 
+</body>
 </html>

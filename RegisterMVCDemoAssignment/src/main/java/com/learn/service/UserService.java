@@ -22,4 +22,28 @@ public class UserService {
 		
 	}
 
+	public String validateUserNameExistOrNot(UserBean userBean) {
+		// TODO Auto-generated method stub
+		
+		String error = null;
+		
+		UserBean userBean1 = userDAO.isUserNameExists(userBean);
+
+		
+		if(userBean.getUsername() != null) {
+			
+			error = "User Already Exists";
+		}
+		
+		else {
+			
+			userBean= userDAO.createUserBean(userBean);
+
+		}
+			
+			
+		
+		return error;
+	}
+
 }

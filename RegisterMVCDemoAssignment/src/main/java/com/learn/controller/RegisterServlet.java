@@ -15,43 +15,46 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class RegisterServlet
  */
-@WebServlet("/loginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/registerServlet")
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
 	UserService userService = new UserService();
 
-	/**
-	 * Default constructor.
-	 */
-	public LoginServlet() {
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * Default constructor. 
+     */
+    public RegisterServlet() {
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
 		String error = UserUtil.validateRequest(request);
 		HttpSession session = request.getSession();
 
 		if (error == null) {
 
+			String firstname = request.getParameter("firstname");
+			String lastname = request.getParameter("lastname");
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 			UserBean userBean = new UserBean();
+			userBean.setFirstName(firstname);
+			userBean.setLastName(lastname);			
 			userBean.setUsername(username);
 			userBean.setPassword(password);
 
-			error = userService.autheticateAndPopulateUSer(userBean);
+			error = userService.validateUserNameExistOrNot(userBean);
 
 						if (error == null) {
-				session.setAttribute("firstName", userBean.getFirstName());
+				session.setAttribute("username", userBean.getUsername());
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("success.jsp");
 				requestDispatcher.forward(request, response);
 			}
@@ -59,7 +62,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		if (error != null) {
 			session.setAttribute("error", error);
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("register.jsp");
 			requestDispatcher.forward(request, response);
 		}
 
