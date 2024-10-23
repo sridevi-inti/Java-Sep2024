@@ -45,9 +45,7 @@ public class UserDAO {
 	}
 			return userBean;
 }
-	
-	 String insertSQL ="insert into user values (?, ?, ?, ?)";
-	 
+		 
 	public UserBean createUserBean(UserBean userBean) {
 		
 		try {
@@ -56,14 +54,20 @@ public class UserDAO {
 			  DriverManager.getConnection("jdbc:mysql://localhost:3306/sept2024","root",
 					  "sqlsun1ta");
 			 
-			 // String insertSQL ="insert into user values (?, ?, ?, ?)";
-			 PreparedStatement preparedStatement = connection.prepareStatement(insertSQL)){
+			 PreparedStatement preparedStatement = connection.prepareStatement("insert into user values (?, ?, ?, ?)")){
 		  
 		 preparedStatement.setString(1, userBean.getFirstName());
 		 preparedStatement.setString(2, userBean.getLastName());
 		 preparedStatement.setString(3, userBean.getUsername());
-		  preparedStatement.setString(4, userBean.getPassword());
+		 preparedStatement.setString(4, userBean.getPassword());
 		  
+		 int rowsAffected = preparedStatement.executeUpdate();
+		 
+		 if (rowsAffected > 0) {
+             System.out.println("Row inserted successfully!");
+         } else {
+             System.out.println("Failed to insert row.");
+         }
 					 
 	  } catch (SQLException e) {
 		// TODO Auto-generated catch block
