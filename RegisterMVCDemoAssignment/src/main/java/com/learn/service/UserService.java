@@ -30,7 +30,7 @@ public class UserService {
 		UserBean userBean1 = userDAO.isUserNameExists(userBean);
 
 		
-		if(userBean.getUsername() != null) {
+		if(userBean1.getUsername() != null) {
 			
 			error = "User Already Exists";
 		}
