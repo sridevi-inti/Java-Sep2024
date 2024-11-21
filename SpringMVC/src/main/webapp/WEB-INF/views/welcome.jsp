@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome To Spring Application.
+<%= request.getAttribute("message") %>
 </body>
 </html>
