@@ -2,14 +2,13 @@
     pageEncoding="UTF-8"%>
     
     <%
-    if(session!= null){
+    
+    if(session!=null){
+    	
     	session.invalidate();
     }
+    
     %>
-    
-    
-    
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +16,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>Session Ended Successfully</p>
+Session Ended Successfully..
 </body>
 </html>

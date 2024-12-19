@@ -10,14 +10,8 @@
 	</servlet>
 	
 	<servlet>
-		<servlet-name>DeleteEMailAddressServlet</servlet-name>
-		<servlet-class>assign.servlets.DeleteEMailAddressServlet</servlet-class>
-	</servlet>
-
-
-<servlet>
-		<servlet-name>GetAllEMailListbyGroupServlet</servlet-name>
-		<servlet-class>assign.servlets.GetAllEMailListbyGroupServlet</servlet-class>
+		<servlet-name>GetGroupDtlsServlet</servlet-name>
+		<servlet-class>assign.servlets.GetAllEMailListServlet</servlet-class>
 	</servlet>
 
 
@@ -28,6 +22,11 @@
 	<servlet>
 		<servlet-name>AddEMailAddressServlet</servlet-name>
 		<servlet-class>assign.servlets.AddEMailAddressServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>DeleteEMailAddressServlet</servlet-name>
+		<servlet-class>assign.servlets.DeleteEMailAddressServlet</servlet-class>
 	</servlet>
 
 	<servlet>
@@ -51,8 +50,8 @@
 	</servlet-mapping>
 	
 	<servlet-mapping>
-		<servlet-name>DeleteEMailAddressServlet</servlet-name>
-		<url-pattern>/servlet/deleteemailaddressservlet</url-pattern>
+		<servlet-name>GetAllEMailListServlet</servlet-name>
+		<url-pattern>/servlet/allemailaddressdtls</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -61,8 +60,8 @@
 	</servlet-mapping>
 	
 	<servlet-mapping>
-		<servlet-name>GetAllEMailListbyGroupServlet</servlet-name>
-		<url-pattern>/servlet/viewallemaillistbygroup</url-pattern>
+		<servlet-name>DeleteEMailAddressServlet</servlet-name>
+		<url-pattern>/servlet/deleteemailaddress</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>

@@ -11,7 +11,7 @@
 </center>
 <!--Body: delete contact information-->
 <center>
-<form method="post" action="/mysite/servlet/deleteemailaddressservlet">
+<form method="post" action="/mysite/servlet/deleteemailaddress">
 	<table  cellpadding="0" cellspacing="0" width="50%"">
 		<tr>
 			<td bgcolor="#FAFAF9" style="padding-left: 10px;">E-mail</td>

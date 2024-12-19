@@ -15,49 +15,41 @@ import assign.dbaccess.EMailValidationException;
 
 public class GetAllEMailListServlet extends HttpServlet {
 
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response)
-        throws IOException, ServletException
-    {
-	String errors = "";
-        response.setContentType("text/html");
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		String errors = "";
+		response.setContentType("text/html");
 
-	EMailBO eMailBO = new EMailBO();
-	//EMailAddressVOO[] eMailList = null;
-	ArrayList<EMailAddressVOO> list= null;
+		EMailBO eMailBO = new EMailBO();
+		// EMailAddressVOO[] eMailList = null;
 
-	try{
-		 list = eMailBO.getAllEMailAddressList();
+		ArrayList<EMailAddressVOO> list = null;
+
+		try {
+			list = eMailBO.getAllEMailAddressList();
 			/*
 			 * Object[] aList = list.toArray(new EMailAddressVOO[list.size()]); eMailList =
 			 * new EMailAddressVOO[list.size()]; for (int i = 0;i < aList.length;i++) {
 			 * eMailList[i] = (EMailAddressVOO) aList[i];
 			 * System.out.println(eMailList[i].geteMailID()); }
 			 */
-	}catch (EMailValidationException emve){
-		errors = emve.getErrorMessage();
-	} 
-	catch (Exception e){
-		e.printStackTrace();
-	}
-	if (errors.equals("")){
-request.getSession().setAttribute("emaillist", list);
-	//	request.setAttribute("listt", eMailList);
-		response.sendRedirect("/mysite/viewallcontactsuccess.jsp");	
+		} catch (EMailValidationException emve) {
+			errors = emve.getErrorMessage();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (errors.equals("")) {
+			request.getSession().setAttribute("emaillist", list);
+			// request.setAttribute("emaillist", eMailList);
+			response.sendRedirect("/mysite/viewallcontactsuccess.jsp");
 
+		} else {
+			request.getSession().setAttribute("Errors", errors);
+			response.sendRedirect("/mysite/viewallcontacts.jsp");
+		}
 	}
-	else {
-		request.getSession().setAttribute("Errors", errors);
-		response.sendRedirect("/mysite/viewallcontacts.jsp");
-	}
-    }
 
-    public void doPost(HttpServletRequest request,
-                      HttpServletResponse response)
-        throws IOException, ServletException
-    {
-        doGet(request, response);
-    }
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		doGet(request, response);
+	}
 
 }
-

@@ -1,17 +1,18 @@
 <%@include file="header.html"%>
 <html>
 <head>
-<title>View by Group</title>
+<title>View Contact</title>
 </head>
 
 <body bgcolor="#ffffee" leftmargin="10px" rightmargin="10px">
 
 <center>
-<h2>View by Group</h2>
+<h2>View All Contacts</h2>
+<%@include file="displayformerrors.jsp"%>
 </center>
-<!--Body: view by group information-->
+<!--Body: view contact information-->
 <center>
-<form method="post" action="/mysite/servlet/viewallemaillistbygroup">
+<form method="post" action="/mysite/servlet/allemailaddressdtls">
 	<table  cellpadding="0" cellspacing="0" width="50%"">
 		<tr>
 			<td bgcolor="#FAFAF9" style="padding-left: 10px;">E-mail</td>
@@ -22,7 +23,7 @@
 			<br>
 			<table  width="50%">
 				<tr>
-					<td><input type="submit" name="save" value="View by Group"/></td>
+					<td><input type="submit" name="save" value="View"/></td>
 					<td width="201"><input type="reset" name="clear" value="Clear" />&nbsp;</td>
 				</tr>
 			</table>
@@ -37,5 +38,3 @@
 
 </html>
 <%@include file="footer.html"%>
-
-</body>

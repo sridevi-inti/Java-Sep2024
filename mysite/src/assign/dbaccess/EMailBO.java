@@ -106,7 +106,7 @@ public class EMailBO {
 
 	public ArrayList getAllEMailAddressList() throws EMailValidationException, Exception{
 		EMailDBAccess eMailDBAccess = new EMailDBAccess();
-		ArrayList <EMailAddressVOO> eMailList = eMailDBAccess.getAllEMailAdressEntries();
+		ArrayList eMailList = eMailDBAccess.getAllEMailAdressEntries();
 		return eMailList;
 	}
 

@@ -18,7 +18,6 @@ public class EMailAddressVOO implements Serializable {
 	private String wPhone;
 	private String mPhone;
 	private String groupID;
-	private String groupName;
 
 	/**
 	 * No Argument Constructor
@@ -30,7 +29,7 @@ public class EMailAddressVOO implements Serializable {
 	 * Argument Constructor
 	 */
 
-public EMailAddressVOO(String inEMailID, String inFName, String inMName, String inLName, String inHPhone, String inWPhone, String inMPhone, String inGroupID, String inGroupName) {
+public EMailAddressVOO(String inEMailID, String inFName, String inMName, String inLName, String inHPhone, String inWPhone, String inMPhone, String inGroupID ) {
 		eMailID = inEMailID;
 		fName = inFName;
 		mName = inMName;
@@ -39,7 +38,6 @@ public EMailAddressVOO(String inEMailID, String inFName, String inMName, String 
 		wPhone = inWPhone;
 		mPhone = inMPhone;
 		groupID = inGroupID;
-	//	groupName = inGroupName;
 	}
 
 // Getters
@@ -76,10 +74,6 @@ public EMailAddressVOO(String inEMailID, String inFName, String inMName, String 
 	public String getgroupID() {
 		return groupID;
 	}
-	
-	/*
-	 * public String getgroupName() { return groupName; }
-	 */
 
 
 // Setters
@@ -117,9 +111,5 @@ public EMailAddressVOO(String inEMailID, String inFName, String inMName, String 
 	public void setgroupID(String inGroupID) {
 		groupID = inGroupID;
 	}
-	
-	/*
-	 * public void setgroupName(String inGroupName) { groupName = inGroupName; }
-	 */
 }
  
