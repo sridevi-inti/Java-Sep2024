@@ -14,7 +14,7 @@
 </center>
 <!--Body: add contact information-->
 <center>
-<form method="post" action="/mysite/servlet/ModifyAnyOrAllForEmailAddressServlet">
+<form method="post" action="/mysite/servlet/modifyanyorallforemailaddresssevlet">
 	<table  cellpadding="0" cellspacing="0" width="50%"">
 
 
@@ -52,10 +52,7 @@
 			<td><input type="text" name="hphone" maxlength="12" value="<%=eMailAddressVOO.gethPhone() %>" /></td>
 		</tr>
 		
-		<tr>
-			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Group Id</td>
-			<td><input type="text" name="groupID" maxlength="12" value="<%=eMailAddressVOO.getgroupID() %>" /></td>
-		</tr>
+		
 		
 		
 <tr>

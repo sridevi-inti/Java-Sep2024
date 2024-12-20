@@ -20,7 +20,7 @@ public class GetAllEMailListbyGroupServlet extends HttpServlet {
         throws IOException, ServletException
     {
 	String errors = "";
-	String groupID = request.getParameter("groupid");
+	String groupID = request.getParameter("GroupId");
         response.setContentType("text/html");
 
 	EMailBO eMailBO = new EMailBO();
@@ -30,8 +30,8 @@ public class GetAllEMailListbyGroupServlet extends HttpServlet {
 
 	try{
 	    //ArrayList emailAddress = eMailBO.getAllEMailAddressListbyGroup(groupID);
-		
-	    ArrayList emailAddress = eMailBO.getAllEMailAddressListbyGroup(groupID);
+		System.out.println("groupID is: "+ groupID);
+		eMailAddress = eMailBO.getAllEMailAddressListbyGroup(groupID);
 
 	}catch (EMailValidationException emve){
 		errors = emve.getErrorMessage();
@@ -41,7 +41,8 @@ public class GetAllEMailListbyGroupServlet extends HttpServlet {
 	}
 	if (errors.equals("")){
 		request.getSession().setAttribute("emailList", eMailAddress);	
-		response.sendRedirect("/mysite/viewbygroupsuccess.jsp");	
+		response.sendRedirect("/mysite/viewbygroupsuccess.jsp");
+		//response.sendRedirect("/mysite/viewallcontactsuccess.jsp");
 
 	}
 	else {

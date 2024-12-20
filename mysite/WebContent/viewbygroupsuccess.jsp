@@ -1,6 +1,8 @@
 <%@include file="header.html"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page import="assign.dbaccess.EMailAddressVOO"%>
+<%@ page import="assign.dbaccess.EMailBO"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +27,7 @@
 		</thread>
 		<tbody>
 			<%
-			ArrayList<EMailAddressVOO> list = (ArrayList<EMailAddressVOO>) request.getSession().getAttribute("emaillist");
+			ArrayList<EMailAddressVOO> list = (ArrayList<EMailAddressVOO>) request.getSession().getAttribute("emailList");
 			if (list != null && !list.isEmpty()) {
 				for (EMailAddressVOO email : list) {
 
@@ -45,6 +47,7 @@
 				break;
 					}
 			%>
+
 
 			<tr>
 				<td><%=email.geteMailID()%></td>

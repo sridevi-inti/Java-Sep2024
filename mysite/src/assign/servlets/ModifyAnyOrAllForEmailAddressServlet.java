@@ -34,7 +34,7 @@ public class ModifyAnyOrAllForEmailAddressServlet extends HttpServlet {
 
 		String errors ="";
 		
-		String firstName = request.getParameter("fName"));
+		String firstName = request.getParameter("fName");
 		String middleName = request.getParameter("mName");
 		String lastName = request.getParameter("lName");
 		String workPhone = request.getParameter("wPhone");
@@ -96,5 +96,7 @@ public class ModifyAnyOrAllForEmailAddressServlet extends HttpServlet {
 		}
     	
     }
+	
+	
 
 }

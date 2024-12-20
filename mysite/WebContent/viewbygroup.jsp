@@ -10,16 +10,16 @@
 	</center>
 	<!--Body: view by group information-->
 	<center>
-		<form method="post" action="/mysite/servlet/viewallbygroup">
+		<form method="post" action="/mysite/servlet/viewbygroup">
 			<table cellpadding="0" cellspacing="0" width="50%"">
 				<tr>
 
 					<label for="groupId">GroupId:</label>
 
 					<select name="GroupId">
-						<option value="friends">Friends</option>
-						<option value="personal">Personal</option>
-						<option value="relatives">Relatives</option>
+						<option value="7">Friends</option>
+						<option value="8">Personal</option>
+						<option value="9">Relatives</option>
 
 
 					</select>
@@ -29,15 +29,17 @@
 
 					<style>
 .button {
-border-radius: 1000px;}
+border-radius: 10px;}
 
 GroupId span {
     display: block;
     padding-top: 22px;
-    text-align: center;
+    text-align: left;
     line-height: 1em;
 }
 </style>
+
+
 					<input type="submit" value="View by Group">
 				</tr>
 				<tr>

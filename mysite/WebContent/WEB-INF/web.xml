@@ -67,7 +67,7 @@
 	
 	<servlet-mapping>
 		<servlet-name>GetAllEMailListbyGroupServlet</servlet-name>
-		<url-pattern>/servlet/viewallbygroup</url-pattern>
+		<url-pattern>/servlet/viewbygroup</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -96,7 +96,7 @@
 	
 	<servlet-mapping>
 		<servlet-name>ModifyAnyOrAllForEmailAddressServlet</servlet-name>
-		<url-pattern>/servlet/displayrecordupdate</url-pattern>
+		<url-pattern>/servlet/modifyanyorallforemailaddresssevlet</url-pattern>
 	</servlet-mapping>
 	
 	
