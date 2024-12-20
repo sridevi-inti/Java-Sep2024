@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<p align="center"><h1>View All Contacts</p></h1>
 	<table cellpadding="8" cellspacing="5" width="50%"">
 
 		<thread>
@@ -62,9 +63,14 @@
 			}
 			} else {
 			%>
+			
 			<tr>
-				<td colspan="8">No Contacts Found..</td>
-			</tr>
+			<td colspan="2" align="right" >No Contacts Found..</td>
+			
+			<br>
+			<table  width="50%">
+				<tr>
+			
 			<%
 			}
 			%>

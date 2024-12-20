@@ -97,7 +97,7 @@ public class EMailDBAccess {
 		pStmt = dbConn.prepareStatement("SELECT * FROM emailaddress WHERE emailaddress = ?");
 		pStmt.setString(1, inEMailID);
    		rs = pStmt.executeQuery();
-
+ 
 		if (rs.next()) {
 		eMailAddress = new EMailAddressVOO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
 						rs.getString(6), rs.getString(7), rs.getString(8));
@@ -167,14 +167,13 @@ public class EMailDBAccess {
 
 	     try{
 		dbConn = getConnection();
-		pStmt = dbConn.prepareStatement("UPDATE emailaddress SET emailadress = ?, firstname = ? middlename = ? lastname = ?, homephone = ?, workphone = ?, mobilephone = ?, groupid = ?");
-		pStmt.setString(1, inEMailAddress.geteMailID());
-		pStmt.setString(2, inEMailAddress.getfName());
-		pStmt.setString(3, inEMailAddress.getmName());
-		pStmt.setString(4, inEMailAddress.getlName());
-		pStmt.setString(5, inEMailAddress.gethPhone());
-		pStmt.setString(6, inEMailAddress.getwPhone());
-		pStmt.setString(7, inEMailAddress.getmPhone());
+		pStmt = dbConn.prepareStatement("UPDATE emailaddress SET fName = ?, mName = ?, lName = ?, wPhone = ?, mPhone = ?, hPhone = ?, groupId = ? Where groupid=?");
+		pStmt.setString(1, inEMailAddress.getfName());
+		pStmt.setString(2, inEMailAddress.getmName());
+		pStmt.setString(3, inEMailAddress.getlName());
+		pStmt.setString(4, inEMailAddress.getwPhone());
+		pStmt.setString(5, inEMailAddress.getmPhone());
+		pStmt.setString(6, inEMailAddress.gethPhone());
 		pStmt.setString(8, inEMailAddress.getgroupID());
 		
    		rowsUpdated = pStmt.executeUpdate();
@@ -280,7 +279,7 @@ public class EMailDBAccess {
 
 	     try{
 		dbConn = getConnection();
-		pStmt = dbConn.prepareStatement("SELECT * FROM emailaddress groupid = ?");
+		pStmt = dbConn.prepareStatement("SELECT * FROM emailaddress where groupid = ?");
 		pStmt.setString(1, inGroupID);
    		rs = pStmt.executeQuery();
 

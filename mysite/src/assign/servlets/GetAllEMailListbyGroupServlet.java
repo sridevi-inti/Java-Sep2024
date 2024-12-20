@@ -24,10 +24,15 @@ public class GetAllEMailListbyGroupServlet extends HttpServlet {
         response.setContentType("text/html");
 
 	EMailBO eMailBO = new EMailBO();
-	ArrayList eMailAddress = null;
+	//ArrayList eMailAddress = null;
+
+	ArrayList<EMailAddressVOO> eMailAddress = null;
 
 	try{
+	    //ArrayList emailAddress = eMailBO.getAllEMailAddressListbyGroup(groupID);
+		
 	    ArrayList emailAddress = eMailBO.getAllEMailAddressListbyGroup(groupID);
+
 	}catch (EMailValidationException emve){
 		errors = emve.getErrorMessage();
 	} 
@@ -36,12 +41,12 @@ public class GetAllEMailListbyGroupServlet extends HttpServlet {
 	}
 	if (errors.equals("")){
 		request.getSession().setAttribute("emailList", eMailAddress);	
-		response.sendRedirect("/mysite/viewallcontacts.jsp");	
+		response.sendRedirect("/mysite/viewbygroupsuccess.jsp");	
 
 	}
 	else {
 		request.getSession().setAttribute("Errors", errors);
-		response.sendRedirect("/mysite/error.jsp");
+		response.sendRedirect("/mysite/viewbygroup.jsp");
 	}
     }
 

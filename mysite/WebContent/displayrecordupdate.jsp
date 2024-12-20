@@ -14,15 +14,32 @@
 </center>
 <!--Body: add contact information-->
 <center>
-<form method="post" >
+<form method="post" action="/mysite/servlet/ModifyAnyOrAllForEmailAddressServlet">
 	<table  cellpadding="0" cellspacing="0" width="50%"">
 
 
 		<%
-			EMailAddressVOO eMailAddressVOO = (EMailAddressVOO) request.getAttribute("emailVO");
+			EMailAddressVOO eMailAddressVOO = (EMailAddressVOO) request.getSession().getAttribute("emailVO");
  		%>
-
+<tr>
+			
+			
+			<tr>
+			<td bgcolor="#FAFAF9" style="padding-left: 10px;">First Name</td>
+			<td><input type="text" name="fName" maxlength="12" value="<%=eMailAddressVOO.getfName() %>" /></td>
+		</tr>
+		
 		<tr>
+			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Middle Name</td>
+			<td><input type="text" name="mName" maxlength="12" value="<%=eMailAddressVOO.getmName() %>" /></td>
+		</tr>
+		
+		<tr>
+			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Last Name</td>
+			<td><input type="text" name="lName" maxlength="12" value="<%=eMailAddressVOO.getlName() %>" /></td>
+		</tr>
+
+<tr>
 			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Work Phone</td>
 			<td><input type="text" name="wphone" maxlength="12" value="<%=eMailAddressVOO.getwPhone() %>" /></td>
 		</tr>
@@ -30,8 +47,34 @@
 			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Mobile Phone</td>
 			<td><input type="text" name="mphone" maxlength="12" value="<%=eMailAddressVOO.getmPhone() %>" /></td>
 		</tr>
-
 		<tr>
+			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Home Phone</td>
+			<td><input type="text" name="hphone" maxlength="12" value="<%=eMailAddressVOO.gethPhone() %>" /></td>
+		</tr>
+		
+		<tr>
+			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Group Id</td>
+			<td><input type="text" name="groupID" maxlength="12" value="<%=eMailAddressVOO.getgroupID() %>" /></td>
+		</tr>
+		
+		
+<tr>
+		</td>
+			<td bgcolor="#FAFAF9" style="padding-left: 10px;">Group Id:</td>
+			<td><select name="groupID">
+			<option value="7"
+			<%=(eMailAddressVOO.getgroupID().equals("7")) ? "selected" : "" %>>Friends</option>
+			<option value="8"
+			<%=(eMailAddressVOO.getgroupID().equals("8")) ? "selected" : "" %>>Personal</option>
+			<option value="9"
+			<%=(eMailAddressVOO.getgroupID().equals("9")) ? "selected" : "" %>>Relatives</option>
+			</select></td>
+			
+</tr>
+
+		
+		
+		
 			<td colspan="2" align="right">
 			<br>
 			<table  width="50%">

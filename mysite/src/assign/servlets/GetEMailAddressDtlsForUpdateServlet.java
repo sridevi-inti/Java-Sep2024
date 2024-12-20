@@ -38,7 +38,9 @@ public class GetEMailAddressDtlsForUpdateServlet extends HttpServlet {
     	
 		if (errors.equals("")) {
 			System.out.println("first Name: " + eMailAddressVOO.getfName());
-			request.setAttribute("emailVO", eMailAddressVOO);
+			//request.setAttribute("emailVO", eMailAddressVOO);
+			request.getSession().setAttribute("emailVO", eMailAddressVOO);
+
 			RequestDispatcher rd = request.getRequestDispatcher("/displayrecordupdate.jsp");
 			rd.forward(request, response);
 		} else {
